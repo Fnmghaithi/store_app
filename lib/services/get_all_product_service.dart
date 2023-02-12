@@ -9,16 +9,18 @@ class AllProductsService {
     List<dynamic> data = jsonDecode(response.body);
     List<Product> productsList = [];
 
-    for (dynamic jsonData in data) {
+    for (int i = 0; i < data.length; i++) {
       productsList.add(
-        Product.fromJson(jsonData),
+        Product.fromJson(data[i]),
       );
     }
-    // for (int i = 0; i < data.length; i++) {
+
+    // for (dynamic jsonData in data) {
     //   productsList.add(
-    //     Product.fromJson(data[i]),
+    //     Product.fromJson(jsonData),
     //   );
     // }
+
     return productsList;
   }
 }
