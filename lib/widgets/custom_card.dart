@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product.dart';
 
 class CustomCard extends StatelessWidget {
+  final Product product;
   const CustomCard({
     Key? key,
+    required this.product,
   }) : super(key: key);
 
   @override
@@ -33,23 +36,23 @@ class CustomCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Handbag LV',
-                    style: TextStyle(
+                    product.title.substring(0, 11),
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '\$200',
-                        style: TextStyle(
+                        '\$${product.price}',
+                        style: const TextStyle(
                           fontSize: 16,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.favorite,
                         color: Colors.red,
                       )
@@ -64,8 +67,9 @@ class CustomCard extends StatelessWidget {
           right: 32,
           top: -60,
           child: Image.network(
-            'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+            product.image,
             height: 100,
+            width: 100,
           ),
         ),
       ],
