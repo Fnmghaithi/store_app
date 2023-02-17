@@ -3,10 +3,10 @@ import 'package:store_app/models/rating.dart';
 class Product {
   final int id;
   final String title;
-  final double price;
+  final dynamic price;
   final String description;
   final String image;
-  final Rating rating;
+  final Rating? rating;
 
   Product({
     required this.id,

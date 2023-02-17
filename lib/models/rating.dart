@@ -1,5 +1,5 @@
 class Rating {
-  final double rate;
+  final dynamic rate;
   final int count;
 
   Rating({
