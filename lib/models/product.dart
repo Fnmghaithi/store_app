@@ -7,6 +7,7 @@ class Product {
   final String description;
   final String image;
   final Rating? rating;
+  final String? category;
 
   Product({
     required this.id,
@@ -15,6 +16,7 @@ class Product {
     required this.description,
     required this.image,
     required this.rating,
+    required this.category,
   });
 
   factory Product.fromJson(jsonData) {
@@ -25,6 +27,7 @@ class Product {
       description: jsonData['description'],
       image: jsonData['image'],
       rating: Rating.fromJson(jsonData['rating']),
+      category: jsonData['category'],
     );
   }
 }

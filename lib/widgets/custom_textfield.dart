@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 
-class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
+class CustomTextField extends StatelessWidget {
+  CustomTextField({
     Key? key,
     this.hintText,
     this.onChanged,
+    this.inputType,
   });
   String? hintText;
   Function(String)? onChanged;
+  TextInputType? inputType;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextField(
       obscureText: hintText == 'Password' ? true : false,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return 'field is required';
-        }
-      },
       decoration: InputDecoration(
         hintText: hintText,
         enabledBorder: OutlineInputBorder(
@@ -29,6 +26,7 @@ class CustomTextFormField extends StatelessWidget {
           borderSide: BorderSide(),
         ),
       ),
+      keyboardType: inputType,
       onChanged: onChanged,
     );
   }
