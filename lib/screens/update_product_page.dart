@@ -92,10 +92,11 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
 
   Future<void> updateProduct(Product product) async {
     await UpdateProduct().updateProduct(
-      title: productName!,
-      price: price!,
-      description: description!,
-      image: image!,
+      id: product.id,
+      title: productName == null ? product.title : productName!,
+      price: price == null ? product.price.toString() : price!,
+      description: description == null ? product.description : description!,
+      image: image == null ? product.image : image!,
       category: product.category!,
     );
   }

@@ -7,10 +7,11 @@ class UpdateProduct {
     required String price,
     required String description,
     required String image,
+    required int id,
     required String category,
   }) async {
-    Future<Map<String, dynamic>> data = await Api().put(
-      uri: 'https://fakestoreapi.com/products',
+    Map<String, dynamic> data = await Api().put(
+      uri: 'https://fakestoreapi.com/products/$id',
       body: {
         'title': title,
         'price': price,

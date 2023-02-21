@@ -77,6 +77,8 @@ class Api {
         },
       );
     }
+
+    print(body);
     Uri url = Uri.parse(uri);
     http.Response response = await http.put(
       url,
@@ -86,7 +88,7 @@ class Api {
 
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
-
+      print(data);
       return data;
     } else {
       throw Exception(
